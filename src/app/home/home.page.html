@@ -1,14 +1,20 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Ionic Blank
+      App musical
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+  <ion-label color="primary">Touch the musical instrument for play music</ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let instrument of instruments">
+        <ion-card (click)="playMusic(instrument.sound)">
+          <ion-img [src]="instrument.img"></ion-img>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
